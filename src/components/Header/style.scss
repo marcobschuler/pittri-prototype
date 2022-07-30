@@ -1,0 +1,26 @@
+header {
+  background-color: peachpuff;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+/*===========================
+  Logo
+===========================*/
+
+.header__logo {
+  height: auto;
+  width: 20rem;
+}
+
+/*===========================
+  Navigation bar
+===========================*/
