@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,6 +12,14 @@ body {
 	font-size: 1.6rem;
 }
 
-#root {
-	min-height: 100vh;
+li {
+  list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+// #root {
+// 	min-height: 100vh;
+// }

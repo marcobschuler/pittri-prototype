@@ -18,8 +18,57 @@ $color-A200: #B2FF59;
 $color-A400: #76FF03;
 $color-A700: #64DD17;
 
+$white: #FFFFFF;
+$black: #000000;
+
+$grayish-50: #FAFAFA;
+$grayish-100: #F5F5F5;
+$grayish-200: #EEEEEE;
+$grayish-300: #E0E0E0;
+$grayish-400: #BDBDBD;
+$grayish-500: #9E9E9E;
+$grayish-600: #757575;
+$grayish-700: #616161;
+$grayish-800: #424242;
+$grayish-900: #212121;
+
 /*===========================
   Typography
 ===========================*/
 
 $font-family: 'Roboto', sans-serif;
+
+/*===========================
+  Media Queries breakpoints
+===========================*/
+// xs - Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default
+
+// sm - Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { /* styles  */ }
+
+// md - Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { /* styles  */ }
+
+// lg - Large devices (desktops, 992px and up)
+@media (min-width: 992px) { /* styles  */ }
+
+// xl - Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { /* styles  */ }
+
+/*===========================
+  Animations Effects
+===========================*/
+
+$speed: 300ms;
+
+/*===========================
+  Overlay
+===========================*/
+$zindex-dropdown: 100;
+$zindex-sticky: 200;
+$zindex-fixed: 300;
+$zindex-modal-backdrop: 400;
+$zindex-modal: 500;
+$zindex-popover: 600;
+$zindex-tooltip: 700;

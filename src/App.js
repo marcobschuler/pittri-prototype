@@ -1,9 +1,12 @@
-import Home from './pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import MainRoutes from './routes';
 import './styles/global.scss';
 
 function App() {
   return (
-    <Home />
+    <BrowserRouter>
+      <MainRoutes />
+    </BrowserRouter>
   );
 }
 
