@@ -1,8 +1,10 @@
+@use './theme';
+
 /*===========================
   Color palette: Turtle
 ===========================*/
 
-$color-50: #F1F8E9;
+$color-50: #f0f8e8;
 $color-100: #DCEDC8;
 $color-200: #C5E1A5;
 $color-300: #AED581;
@@ -11,7 +13,7 @@ $color-500: #8BC34A;
 $color-600: #7CB342;
 $color-700: #689F38;
 $color-800: #558B2F;
-$color-900: #33691E;
+$color-900: #32671d;
 
 $color-A100: #CCFF90;
 $color-A200: #B2FF59;
@@ -55,6 +57,12 @@ $font-family: 'Roboto', sans-serif;
 
 // xl - Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { /* styles  */ }
+
+
+//320
+//768
+//1024
+//1440
 
 /*===========================
   Animations Effects

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './style.scss';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/logo-pittri.svg';
+import './style.scss';
 
 function Header() {
   const [active, setActive] = useState('nav__menu');
@@ -32,34 +32,39 @@ function Header() {
     },
     {
       id: 4,
-      name: 'Contato',
-      path: '/contact',
+      name: 'Sobre',
+      path: '/about',
     },
   ];
 
   return (
-    <nav className='nav'>
-      <Link to='/' className='nav__brand'>
-        <img className='header__logo' src={Logo} alt='Logo pittri' />
-      </Link>
-      <ul className={active}>
-        {navbarItems.map(({ id, name, path }) => (
-          <li className='nav__item' key={id}>
-            <NavLink
-              className={({ isActive }) => (isActive ? 'nav__link--selected' : 'nav__link')}
-              to={path}
-            >
-              {name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      <div onClick={navToggle} className={icon}>
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <div className="line3"></div>
+    <header className='header'>
+      
+      <div className='header__banner'>
+        <img src={Logo} alt='Logo pittri' />
       </div>
-    </nav>
+
+      <nav className='nav'>
+        <ul className={active}>
+          {navbarItems.map(({ id, name, path }) => (
+            <li className='nav__item' key={id}>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'nav__link nav__link--selected' : 'nav__link')}
+                to={path}
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+        <div onClick={navToggle} className={icon}>
+          <div className='line1'></div>
+          <div className='line2'></div>
+          <div className='line3'></div>
+        </div>
+      </nav>
+      
+    </header>
   );
 }
 
