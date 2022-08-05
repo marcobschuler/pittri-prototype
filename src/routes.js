@@ -2,8 +2,8 @@ import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { GlobalProvider } from './contexts/GlobalContext';
 import useGlobal from './hooks/useGlobal';
 
-import Home from './pages/Home';
 import Header from './components/Header';
+import Home from './pages/Home';
 
 function ProtectedRoutes({ redirectTo }) {
   const { token } = useGlobal();
@@ -17,9 +17,9 @@ function MainRoutes() {
     <GlobalProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Header />} />
-        <Route path="/gallery" element={<Header />} />
-        <Route path="/about" element={<Header />} />
+        <Route path="/events" element={<Home />} />
+        <Route path="/gallery" element={<Home />} />
+        <Route path="/about" element={<Home />} />
 
         <Route element={<ProtectedRoutes redirectTo="/" />}>
           <Route path="/example" element={<h1>Example</h1>} />

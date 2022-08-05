@@ -17,34 +17,36 @@ function Header() {
   const navbarItems = [
     {
       id: 1,
-      name: 'Início',
+      name: 'Section 1',
       path: '/',
     },
     {
       id: 2,
-      name: 'Eventos',
+      name: 'Section 2',
       path: '/events',
     },
     {
       id: 3,
-      name: 'Galeria',
+      name: 'Section 3',
       path: '/gallery',
     },
     {
       id: 4,
-      name: 'Sobre',
+      name: 'Section 4',
       path: '/about',
-    },
+    }
   ];
 
   return (
-    <header className='header'>
+    <>
+      <header className='header'>
+        <div className='header__banner'>
+          <img src={Logo} alt='Logo pittri' />
+        </div>
+      </header>
       
-      <div className='header__banner'>
-        <img src={Logo} alt='Logo pittri' />
-      </div>
-
       <nav className='nav'>
+        <input className='nav__search' type='text' placeholder='Procurar' />
         <ul className={active}>
           {navbarItems.map(({ id, name, path }) => (
             <li className='nav__item' key={id}>
@@ -63,8 +65,7 @@ function Header() {
           <div className='line3'></div>
         </div>
       </nav>
-      
-    </header>
+    </>
   );
 }
 

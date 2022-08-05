@@ -3,7 +3,11 @@ import './style.scss';
 
 function Home() {
   return (
-  <Header />
+    <div className='home__layout'>
+      <Header />
+      <main />
+      <footer />
+    </div>
   );
 }
 

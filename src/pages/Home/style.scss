@@ -1,14 +1,16 @@
-// .Home__layout {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-// }
+.home__layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-// main {
-//   flex-grow: 1;
-//   background-color: blueviolet;
-// }
+main {
+  flex-grow: 1;
+  background-color: blueviolet;
+  height: 200vh;
+}
 
-// footer {
-//   background-color: aquamarine;
-// }
+footer {
+  background-color: aquamarine;
+  height: 200px;
+}
