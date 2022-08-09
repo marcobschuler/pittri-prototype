@@ -1,14 +1,13 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-#root {
-	min-height: 100vh;
+  box-sizing: inherit;
 }
 
 html {
+  box-sizing: border-box;
 	font-size: 62.5%;
 }
 
@@ -16,7 +15,8 @@ body {
 	font-size: 1.6rem;
 }
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
 }
 

@@ -1,4 +1,4 @@
-@use '../../styles/variables' as var;
+@use '../abstracts/variables' as var;
 
 .header {
 
@@ -7,21 +7,22 @@
 
     height: max(20vh, 180px);
     width: 100%;
-    background-image: url('../../assets/banner.png');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), var.$grayish-900), url('../../assets/banner.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     
-    &::after {
-      content: '';
-      position: absolute;
+    // &::after {
+    //   content: '';
+    //   position: absolute;
       
-      height: max(20vh, 180px);
-      width: 100%;
-      background-image: linear-gradient(to bottom, var.$color-700, var.$grayish-900 80%);
-      opacity: 0.5;
-    }
-
+    //   height: max(20vh, 180px);
+    //   width: 100%;
+    //   background-image: linear-gradient(to bottom, var.$color-700, var.$grayish-900 80%);
+      
+    //   opacity: 0.3;
+    // }
+    
     // &:hover::after {
     //   opacity: 0;
     // }
@@ -58,10 +59,6 @@
   height: 5vh;
   background-color: #212121;
 
-  &__relative {
-    position: relative;
-  }
-
   &__menu {
     display: flex;
     align-items: center;
@@ -74,15 +71,27 @@
     font-weight: 700;
     color: var.$color-100;
   
+    &:hover {
+      color: var.$color-300;
+      text-shadow: 0 0 8px var.$color-700;
+    }
+
     &--selected {
-      color: var.$color-900;
+      color: var.$color-800;
+    }
+
+    &--selected:hover {
+      color: var.$color-700;
+      text-shadow: 0 0 0.6em var.$color-700;
     }
   }
+
 
   &__toggler {
     display: none;
   
-    & > div {
+    & > span {
+      display: block;
       width: 2.5rem;
       height: 0.2rem;
       margin: 0.4rem;
@@ -99,6 +108,7 @@
   }
   
   .nav__menu {
+    display: none;
     flex-direction: column;
 
     position: absolute;
@@ -108,13 +118,14 @@
     // z-index: var.$zindex-dropdown;
     background-color: rgb(32, 33, 34);
 
-    transform: translateY(100%);
-    transition: 300ms ease-in;
+    transform: translateY(0%);
+    transition: 300ms ease;
   }
 }
 
 /* Active Class */
 .nav__active {
+  display: flex;
   transform: translateY(0%);
 }
 

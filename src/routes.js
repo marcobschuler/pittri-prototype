@@ -2,7 +2,6 @@ import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { GlobalProvider } from './contexts/GlobalContext';
 import useGlobal from './hooks/useGlobal';
 
-import Header from './components/Header';
 import Home from './pages/Home';
 
 function ProtectedRoutes({ redirectTo }) {

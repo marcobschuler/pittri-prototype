@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../assets/logo-pittri.svg';
-import './style.scss';
+import Logo from '../assets/logo-pittri.svg';
 
 function Header() {
   const [active, setActive] = useState('nav__menu');
@@ -17,22 +16,22 @@ function Header() {
   const navbarItems = [
     {
       id: 1,
-      name: 'Section 1',
+      name: 'Page 1',
       path: '/',
     },
     {
       id: 2,
-      name: 'Section 2',
+      name: 'Page 2',
       path: '/events',
     },
     {
       id: 3,
-      name: 'Section 3',
+      name: 'Page 3',
       path: '/gallery',
     },
     {
       id: 4,
-      name: 'Section 4',
+      name: 'Page 4',
       path: '/about',
     }
   ];
@@ -60,9 +59,9 @@ function Header() {
           ))}
         </ul>
         <div onClick={navToggle} className={icon}>
-          <div className='line1'></div>
-          <div className='line2'></div>
-          <div className='line3'></div>
+          <span className='line1'></span>
+          <span className='line2'></span>
+          <span className='line3'></span>
         </div>
       </nav>
     </>

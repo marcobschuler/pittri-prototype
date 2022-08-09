@@ -1,4 +1,4 @@
-import './style.scss';
+
 
 function Example() {
   return (
