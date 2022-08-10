@@ -1,0 +1,155 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home__layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#section1 {
+  background-color: sandybrown;
+  min-height: 120vh;
+}
+
+#section2 {
+  background-color: blueviolet;
+  min-height: 120vh;
+}
+
+footer {
+  background-color: aquamarine;
+  height: 200px;
+}
+
+/*===========================
+  Header
+===========================*/
+.header__banner {
+  position: relative;
+  height: max(20vh, 180px);
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #212121), url("../../assets/banner.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header__banner img {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: 1rem;
+  height: calc(max(20vh, 180px) - 2rem);
+  width: auto;
+}
+
+/*===========================
+  Navigation Bar
+===========================*/
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 5vh;
+  background-color: #212121;
+}
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.nav__link {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #dcedc8;
+}
+.nav__link:hover {
+  color: #aed581;
+  text-shadow: 0 0 8px #689f38;
+}
+.nav__link--selected {
+  color: #558b2f;
+}
+.nav__link--selected:hover {
+  color: #689f38;
+  text-shadow: 0 0 0.6em #689f38;
+}
+.nav__toggler {
+  display: none;
+}
+.nav__toggler > span {
+  display: block;
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 5vh;
+    right: 0;
+    left: 0;
+    background-color: rgb(32, 33, 34);
+    transform: translateY(0%);
+    transition: 300ms ease;
+  }
+}
+/* Active Class */
+.nav__active {
+  display: flex;
+  transform: translateY(0%);
+}
+
+/* Toggle Icon Animation */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}

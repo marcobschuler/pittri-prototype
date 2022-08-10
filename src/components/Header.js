@@ -33,7 +33,7 @@ function Header() {
       id: 4,
       name: 'Page 4',
       path: '/about',
-    }
+    },
   ];
 
   return (
@@ -43,14 +43,16 @@ function Header() {
           <img src={Logo} alt='Logo pittri' />
         </div>
       </header>
-      
+
       <nav className='nav'>
         <input className='nav__search' type='text' placeholder='Procurar' />
         <ul className={active}>
           {navbarItems.map(({ id, name, path }) => (
             <li className='nav__item' key={id}>
               <NavLink
-                className={({ isActive }) => (isActive ? 'nav__link nav__link--selected' : 'nav__link')}
+                className={({ isActive }) =>
+                  isActive ? 'nav__link nav__link--selected' : 'nav__link'
+                }
                 to={path}
               >
                 {name}

@@ -1,32 +1,20 @@
-@use '../abstracts/variables' as var;
+@use '../abstracts' as *;
+
+/*===========================
+  Header
+===========================*/
 
 .header {
-
   &__banner {
     position: relative;
 
     height: max(20vh, 180px);
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), var.$grayish-900), url('../../assets/banner.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), $grayish-900),
+      url('../../assets/banner.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-      
-    //   height: max(20vh, 180px);
-    //   width: 100%;
-    //   background-image: linear-gradient(to bottom, var.$color-700, var.$grayish-900 80%);
-      
-    //   opacity: 0.3;
-    // }
-    
-    // &:hover::after {
-    //   opacity: 0;
-    // }
-
 
     img {
       position: absolute;
@@ -69,27 +57,26 @@
   &__link {
     text-transform: uppercase;
     font-weight: 700;
-    color: var.$color-100;
-  
+    color: $color-100;
+
     &:hover {
-      color: var.$color-300;
-      text-shadow: 0 0 8px var.$color-700;
+      color: $color-300;
+      text-shadow: 0 0 8px $color-700;
     }
 
     &--selected {
-      color: var.$color-800;
+      color: $color-800;
     }
 
     &--selected:hover {
-      color: var.$color-700;
-      text-shadow: 0 0 0.6em var.$color-700;
+      color: $color-700;
+      text-shadow: 0 0 0.6em $color-700;
     }
   }
 
-
   &__toggler {
     display: none;
-  
+
     & > span {
       display: block;
       width: 2.5rem;
@@ -101,12 +88,12 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@include mq(md) {
   .nav__toggler {
     display: block;
     cursor: pointer;
   }
-  
+
   .nav__menu {
     display: none;
     flex-direction: column;
@@ -123,6 +110,28 @@
   }
 }
 
+// @media screen and (max-width: 768px) {
+//   .nav__toggler {
+//     display: block;
+//     cursor: pointer;
+//   }
+
+//   .nav__menu {
+//     display: none;
+//     flex-direction: column;
+
+//     position: absolute;
+//     top: 5vh;
+//     right: 0;
+//     left: 0;
+//     // z-index: var.$zindex-dropdown;
+//     background-color: rgb(32, 33, 34);
+
+//     transform: translateY(0%);
+//     transition: 300ms ease;
+//   }
+// }
+
 /* Active Class */
 .nav__active {
   display: flex;
@@ -130,10 +139,9 @@
 }
 
 /* Toggle Icon Animation */
-
 .toggle {
   .line1 {
-  transform: rotate(-45deg) translate(-4px, 5px);
+    transform: rotate(-45deg) translate(-4px, 5px);
   }
   .line2 {
     opacity: 0;
