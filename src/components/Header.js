@@ -39,13 +39,11 @@ function Header() {
   return (
     <>
       <header className='header'>
-        <div className='header__banner'>
-          <img src={Logo} alt='Logo pittri' />
-        </div>
+        <div className='header__banner'></div>
       </header>
 
       <nav className='nav'>
-        <input className='nav__search' type='text' placeholder='Procurar' />
+        <img className='nav__logo' src={Logo} alt='Logo pittri' />
         <ul className={active}>
           {navbarItems.map(({ id, name, path }) => (
             <li className='nav__item' key={id}>

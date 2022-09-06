@@ -15,19 +15,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    img {
-      position: absolute;
-      top: 0;
-      right: auto;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-
-      margin: 1rem;
-      height: calc(max(20vh, 180px) - 2rem);
-      width: auto;
-    }
   }
 }
 
@@ -37,21 +24,41 @@
 
 .nav {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 
-  position: -webkit-sticky; // for Safari
   position: sticky;
   top: 0;
 
-  height: 5vh;
+  height: 8rem;
   background-color: #212121;
 
+  &__logo {
+    // position: absolute;
+    // top: 0;
+    // right: auto;
+    // bottom: 0;
+    // left: 0;
+    // z-index: 1;
+
+    margin: 1rem;
+    height: calc(8rem - 2rem);
+    width: auto;
+  }
+
   &__menu {
-    display: flex;
+    display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
+
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    left: 0;
+
+    background-color: rgb(32, 33, 34);
   }
 
   &__link {
@@ -66,16 +73,17 @@
 
     &--selected {
       color: $color-800;
-    }
 
-    &--selected:hover {
-      color: $color-700;
-      text-shadow: 0 0 0.6em $color-700;
+      &:hover {
+        color: $color-700;
+        text-shadow: 0 0 0.6em $color-700;
+      }
     }
   }
 
   &__toggler {
-    display: none;
+    display: block;
+    cursor: pointer;
 
     & > span {
       display: block;
@@ -88,21 +96,17 @@
   }
 }
 
-@include mq(md) {
+@include breakpoint-up(md) {
   .nav__toggler {
-    display: block;
-    cursor: pointer;
+    display: none;
   }
 
   .nav__menu {
-    display: none;
-    flex-direction: column;
-
+    display: flex;
+    flex-direction: row;
     position: absolute;
-    top: 5vh;
-    right: 0;
-    left: 0;
-    // z-index: var.$zindex-dropdown;
+    inset: 0;
+
     background-color: rgb(32, 33, 34);
 
     transform: translateY(0%);
@@ -132,10 +136,9 @@
 //   }
 // }
 
-/* Active Class */
+/* Active Class for dropdown-menu */
 .nav__active {
   display: flex;
-  transform: translateY(0%);
 }
 
 /* Toggle Icon Animation */
