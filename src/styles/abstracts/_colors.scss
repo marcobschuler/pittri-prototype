@@ -15,7 +15,7 @@ $colors: (
     A300: hsl(93 100% 51%),
     A400: hsl(97 81% 48%),
   ),
-  dark: (
+  grayish: (
     50: hsl(210 3% 76%),
     100: hsl(210 3% 66%),
     200: hsl(210 11% 71%),
@@ -43,6 +43,9 @@ $colors: (
     github: hsl(215 15% 16%),
   ),
 );
+
+$white: #ffffff;
+$black: #000000;
 
 $github: (
   background: hsl(215, 15%, 16%),

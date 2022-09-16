@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 function Home() {
@@ -5,14 +6,11 @@ function Home() {
     <div className='home__layout'>
       <Header />
       <main>
-        <section id='section1'>
-          <h1>Section 1</h1>
-        </section>
-        <section id='section2'>
-          <h1>Section 2</h1>
-        </section>
+        <section className='hero' />
+
+        <section className='sponsorship' />
       </main>
-      <footer />
+      <Footer />
     </div>
   );
 }

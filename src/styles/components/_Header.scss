@@ -1,26 +1,16 @@
-@use '../abstracts' as *;
+@use '../abstracts/' as *;
 
 /*===========================
   Header
 ===========================*/
 
-.header {
-  &__banner {
-    position: relative;
-
-    height: max(20vh, 180px);
-    width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), $grayish-900),
-      url('../../assets/banner.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-
 /*===========================
   Navigation Bar
 ===========================*/
+
+.empty {
+  display: none;
+}
 
 .nav {
   display: flex;
@@ -31,58 +21,46 @@
   top: 0;
 
   height: 8rem;
-  background-color: #212121;
+  width: 100%;
+  background-color: var(--clr-grayish-600);
 
   &__logo {
-    // position: absolute;
-    // top: 0;
-    // right: auto;
-    // bottom: 0;
-    // left: 0;
-    // z-index: 1;
-
-    margin: 1rem;
-    height: calc(8rem - 2rem);
+    height: 6rem;
     width: auto;
   }
 
   &__menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
     justify-content: space-around;
-    gap: 3rem;
-
-    position: absolute;
-    top: 8rem;
-    right: 0;
-    left: 0;
-
-    background-color: rgb(32, 33, 34);
+    align-items: center;
+    gap: 2rem;
   }
 
   &__link {
-    text-transform: uppercase;
-    font-weight: 700;
-    color: $color-100;
+    padding: 1.5rem 0.75rem;
 
-    &:hover {
-      color: $color-300;
-      text-shadow: 0 0 8px $color-700;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--clr-brand-50);
+
+    &:hover,
+    &:focus {
+      border-radius: 0.5rem;
+      background-image: linear-gradient(to right, transparent, var(--clr-brand-700));
+
+      color: var(--clr-brand-50);
     }
 
     &--selected {
-      color: $color-800;
-
-      &:hover {
-        color: $color-700;
-        text-shadow: 0 0 0.6em $color-700;
-      }
+      color: var(--clr-brand-50);
+      border-radius: 0.5rem;
+      background-color: var(--clr-brand-700);
     }
   }
 
   &__toggler {
-    display: block;
+    display: none;
     cursor: pointer;
 
     & > span {
@@ -96,45 +74,33 @@
   }
 }
 
-@include breakpoint-up(md) {
+@include breakpoint-down(md) {
+  .empty {
+    display: block;
+  }
+
   .nav__toggler {
-    display: none;
+    display: block;
+    cursor: pointer;
   }
 
   .nav__menu {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    inset: 0;
+    display: none;
+    flex-direction: column;
 
-    background-color: rgb(32, 33, 34);
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    left: 0;
+    bottom: auto;
+
+    min-height: calc(60vh - 8rem);
+    background-color: var(--clr-grayish-600);
 
     transform: translateY(0%);
     transition: 300ms ease;
   }
 }
-
-// @media screen and (max-width: 768px) {
-//   .nav__toggler {
-//     display: block;
-//     cursor: pointer;
-//   }
-
-//   .nav__menu {
-//     display: none;
-//     flex-direction: column;
-
-//     position: absolute;
-//     top: 5vh;
-//     right: 0;
-//     left: 0;
-//     // z-index: var.$zindex-dropdown;
-//     background-color: rgb(32, 33, 34);
-
-//     transform: translateY(0%);
-//     transition: 300ms ease;
-//   }
-// }
 
 /* Active Class for dropdown-menu */
 .nav__active {

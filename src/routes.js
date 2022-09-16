@@ -15,16 +15,17 @@ function MainRoutes() {
   return (
     <GlobalProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Home />} />
-        <Route path="/gallery" element={<Home />} />
-        <Route path="/about" element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/eventos' element={<Home />} />
+        <Route path='/galeria' element={<Home />} />
+        <Route path='/sobre' element={<Home />} />
+        <Route path='/feedback' element={<Home />} />
 
-        <Route element={<ProtectedRoutes redirectTo="/" />}>
-          <Route path="/example" element={<h1>Example</h1>} />
+        <Route element={<ProtectedRoutes redirectTo='/' />}>
+          <Route path='/example' element={<h1>Example</h1>} />
         </Route>
 
-        <Route path="*" element={<h1>404 - Not found</h1>} />
+        <Route path='*' element={<h1>404 - Not found</h1>} />
       </Routes>
     </GlobalProvider>
   );

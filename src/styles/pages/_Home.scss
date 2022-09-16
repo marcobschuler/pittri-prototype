@@ -1,21 +1,23 @@
+@use '../abstracts' as *;
+
 .home__layout {
-  display: flex;
-  flex-direction: column;
+  margin: auto;
   min-height: 100vh;
+  max-width: 1440px;
 }
 
-#section1 {
-  background-color: sandybrown;
-  min-height: 120vh;
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 8rem);
+  background-image: linear-gradient(to left, rgba(107, 122, 150, 0.6), rgba(163, 191, 224, 0.6)),
+    url('../../assets/images/tablet.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#section2 {
-  // flex-grow: 1;
+.sponsorship {
   background-color: blueviolet;
-  min-height: 120vh;
-}
-
-footer {
-  background-color: aquamarine;
-  height: 200px;
+  min-height: 100vh;
 }
